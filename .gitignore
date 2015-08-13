@@ -1,0 +1,22 @@
+# temporary files
+*.swp
+
+# python
+*.pyc
+
+# local
+local/
+mywebsite/settings_local.py
+
+# code coverage
+.coverage
+htmlcov
+
+# ideas / design
+wireframes/
+
+# sqlite database
+*.sqlite3
+
+# static root
+static/static_root/
