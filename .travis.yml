@@ -1,7 +1,7 @@
 # Configuration file for Travis CI.
 
 language: python
-python
+python:
   - "2.7"
 
 # Install dependencies
