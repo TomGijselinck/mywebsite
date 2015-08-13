@@ -14,5 +14,5 @@ install:
 
 # Run tests
 script:
-  coverage run --source=mywebsite --omit=*/tests.py manage.py test
+  coverage run --source=myblogapp--omit=*/tests.py manage.py test
 after_success: coveralls
