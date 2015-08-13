@@ -14,5 +14,6 @@ install:
 
 # Run tests
 script:
-  coverage run --source=myblogapp--omit=*/tests.py manage.py test
+  coverage run --source=myblogapp --omit=*/tests.py,*/migrations/* manage.py test
+
 after_success: coveralls
