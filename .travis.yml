@@ -1,0 +1,13 @@
+# Configuration file for Travis CI.
+
+language: python
+python
+  - "2.7"
+
+# Install dependencies
+install:
+  - pip install -r requirements.txt
+
+# Run tests
+script:
+  coverage run --source=mywebsite --omit */migrations/* manage.py test
