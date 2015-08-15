@@ -20,12 +20,13 @@ class PostViewTests(TestCase):
         return Post.objects.create(title=title, body=body, slug=slug)
 
     def test_index_view(self):
-        response = self.client.get(reverse('index'))
+        response = self.client.get(reverse('blog:index'))
         self.assertEqual(response.status_code, 200)
-    
+        self.assertContains(response, "Blog Home")
+
     def test_detail_view(self):
         post = self.create_post(body="not so fancy body text", slug="fancy-title")
-        response = self.client.get(reverse('post_detail', args=(post.slug,)))
+        response = self.client.get(reverse('blog:post_detail', args=(post.slug,)))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, post.body)
 
