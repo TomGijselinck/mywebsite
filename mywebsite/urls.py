@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('myblogapp.urls', namespace='blog')),
     url(r'^about/', views.AboutView.as_view(), name='about'),
+    url(r'^contact/', views.ContactView.as_view(), name='contact'),
     url(r'^$', include('myblogapp.urls')),
 ]
 
