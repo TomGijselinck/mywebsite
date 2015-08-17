@@ -6,3 +6,8 @@ class ViewsTestCase(TestCase):
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "About")
+    
+    def test_contact_page(self):
+        response = self.client.get(reverse('contact'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Contact")
