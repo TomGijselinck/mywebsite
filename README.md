@@ -5,6 +5,12 @@ My personal website using django. (under construction)
 
 www.tomtommy.me
 
+Todo
+-------
++ blog search functionality
++ write tests for tags
++ add side widget
+
 Status
 --------
 Master branch | Development branch | Tests
