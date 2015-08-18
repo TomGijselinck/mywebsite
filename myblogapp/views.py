@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.views import generic
 
 from .models import Post
@@ -26,3 +26,13 @@ class PostDetailView(generic.DetailView):
 		context = super(PostDetailView, self).get_context_data(**kwargs)
 		context['tags'] = Tag.objects.all()
 		return context
+
+def tag_detail(request, slug):
+    posts_with_tag = get_list_or_404(Post, tags__slug=slug)
+    tag = get_object_or_404(Tag, slug=slug)
+    context = {
+            'tags':Tag.objects.all(),
+            'tag':tag,
+            'posts_with_tag':posts_with_tag
+            }
+    return render(request, 'myblogapp/tag_detail.html', context)
