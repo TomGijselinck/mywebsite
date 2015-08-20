@@ -10,6 +10,9 @@ Todo
 + blog search functionality
 + write tests for tags
 + add side widget
++ customize tags (n.o. articles, size)
++ write main page
++ include athlete page(es)
 
 Status
 --------
