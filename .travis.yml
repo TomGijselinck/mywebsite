@@ -5,7 +5,7 @@ python:
   - "2.7"
 
 before_script:
-  - echo $'DEBUG = False \n\nSECRET_KEY = '"'adummykey'" $'\n\nALLOWED_HOSTS = ['"'localost']" > ./mywebsite/settings_local.py
+  - echo "supersecretkey" > ./local/secret_key
 
 # Install dependencies
 install:

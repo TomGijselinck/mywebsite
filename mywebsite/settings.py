@@ -10,10 +10,27 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
+DEV = True
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOCAL_DIR = os.path.join(BASE_DIR, 'local')
+
+
+# When deploying, check this list:
+# https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
+
+with open(os.path.join(LOCAL_DIR, 'secret_key')) as f:
+	SECRET_KEY = f.read().strip()
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = DEV
+
+# Only relevant when when you are in production.
+ALLOWED_HOSTS = ['tomtommy.me', 'localhost']
 
 # Application definition
 
@@ -96,5 +113,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/static_root")
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static", "our_static"),
 )
-
-from settings_local import *
