@@ -13,6 +13,9 @@ Todo
 + customize tags (n.o. articles, size)
 + write main page
 + include athlete page(es)
++ add page with list of all articles
++ next article feature
++ latest articles
 
 Status
 --------
