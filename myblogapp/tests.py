@@ -41,3 +41,28 @@ class TagTestCase(TestCase):
         tag = self.get_tag()
         self.assertTrue(isinstance(tag, Tag))
         self.assertEquals(tag.__str__(), "physics")
+
+class TagViewTests(TestCase):
+    def create_tag_without_posts(self):
+        return Tag.objects.create(title="testing", slug="testing")
+    
+    def create_tag_with_posts(self):
+        tag = Tag.objects.create(title="testing", slug="testing")
+	post = Post.objects.create(title="A test title", slug="test-title")
+	post.tags.add(tag)
+	return tag
+
+    def test_detail_view_tag_without_posts(self):
+        tag = self.create_tag_without_posts()
+	response = self.client.get(reverse('blog:tag_detail', args=(tag.slug,)))
+	self.assertEqual(response.status_code, 404)
+
+    def test_detail_view_tag_with_posts(self):
+        tag = self.create_tag_with_posts()
+	response = self.client.get(reverse('blog:tag_detail', args=(tag.slug,)))
+	self.assertEqual(response.status_code, 200)
+	self.assertContains(response, tag.title)
+
+    def test_detail_view_tag_not_existing(self):
+        response = self.client.get(reverse('blog:tag_detail', args=("not-existing-tag",)))
+	self.assertEqual(response.status_code, 404)
