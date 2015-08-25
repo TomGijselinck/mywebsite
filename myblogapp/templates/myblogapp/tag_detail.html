@@ -13,10 +13,11 @@
 
 	<div class="row">
 		<!-- Post list Column -->
-		<div class="col-sm-8">
+		<div class="col-md-8">
 			{% for post in posts_with_tag %}
 			<h2><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a> <small>{{ post.pub_date|date:"Y-m-d" }}</small></h2>
 			{% endfor %}
+			<br>
 		</div>
 
 		<!-- Blog Sidebar Widgets Column -->

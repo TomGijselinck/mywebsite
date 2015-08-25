@@ -8,8 +8,17 @@ body {
     padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+.page-title {
+  text-align:center;
+	font-size: 3.5em;
+}
+
 .post-title {
 	padding-bottom:5px;
+}
+
+.post-subtitle {
+  font-weight:bold;
 }
 
 html {
