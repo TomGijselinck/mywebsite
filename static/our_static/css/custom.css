@@ -11,10 +11,12 @@ body {
 .page-title {
   text-align:center;
 	font-size: 3.5em;
+	font-weight:bold;
 }
 
 .post-title {
 	padding-bottom:5px;
+	font-weight:bold;
 }
 
 .post-subtitle {
