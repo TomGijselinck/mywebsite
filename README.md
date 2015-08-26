@@ -8,7 +8,6 @@ www.tomtommy.me
 Todo
 -------
 + blog search functionality
-+ write tests for tags
 + add side widget
 + customize tags (n.o. articles, size)
 + write main page
@@ -17,6 +16,7 @@ Todo
 + next article feature
 + latest articles
 + update to [bootstrap 4](http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/ "bootstrap 4 announcement")
++ add page with all tags (and extra details)
 
 Status
 --------
