@@ -3,12 +3,11 @@ Tom Gijselinck personal website
 
 My personal website using django. (under construction)
 
-www.tomtommy.me
+tomgijselinck.com
 
 Todo
 -------
 + blog search functionality
-+ add side widget
 + customize tags (n.o. articles, size)
 + write main page
 + include athlete page(es)
