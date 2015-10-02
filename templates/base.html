@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/prism.css' %}" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="{% static 'css/custom.css' %}" rel="stylesheet">
@@ -24,6 +25,7 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<script src="{% static 'js/prism.js' %}"></script>
 
 </head>
 
@@ -45,8 +47,12 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li>
-					<a href="/blog">Blog</a>
+				<li class="dropdown">
+					<a href="/blog" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="/blog">Blog</a></li>
+						<li><a href="/post-list">Post List</a></li>
+					</ul>
 				</li>
 				<li>
 					<a href="/about">About</a>
