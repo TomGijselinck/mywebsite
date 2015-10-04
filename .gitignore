@@ -8,6 +8,7 @@
 local/
 mywebsite/settings_local.py
 */tests_functional.py
+static/our_static/img/*
 
 # code coverage
 .coverage
