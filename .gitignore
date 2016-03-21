@@ -17,8 +17,8 @@ htmlcov
 # ideas / design
 wireframes/
 
-# sqlite database
-*.sqlite3
-
 # static root
 static/static_root/
+
+# IDE
+.idea
