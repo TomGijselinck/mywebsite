@@ -30,7 +30,7 @@ with open(os.path.join(LOCAL_DIR, 'secret_key')) as f:
 DEBUG = DEV
 
 # Only relevant when when you are in production.
-ALLOWED_HOSTS = ['tomtommy.me', 'tomgijselinck.com']
+ALLOWED_HOSTS = ['tomgijselinck.com']
 
 # Application definition
 
