@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-DEV = True
+DEV = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -30,7 +30,7 @@ with open(os.path.join(LOCAL_DIR, 'secret_key')) as f:
 DEBUG = DEV
 
 # Only relevant when when you are in production.
-ALLOWED_HOSTS = ['tomtommy.me', 'localhost']
+ALLOWED_HOSTS = ['tomgijselinck.com']
 
 # Application definition
 

@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% block head_title %}Posts with {{ tag.title }} {% endblock %}
+{% block head_title %}All Posts{% endblock %}
 
 {% block page_content %}
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
 			<!-- Title -->
-			<h1 class="post-title">Posts with tag <b>{{ tag.title }}</b></h1>
+			<h1 class="post-title">All Posts</h1>
 			<hr />
 		</div>
 	</div>
@@ -14,7 +14,7 @@
 	<div class="row">
 		<!-- Post list Column -->
 		<div class="col-md-8">
-			{% for post in posts_with_tag %}
+			{% for post in post_list %}
 			<h3><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a> <small>{{ post.pub_date|date:"Y-m-d" }}</small></h3>
 			{% endfor %}
 			<br>
