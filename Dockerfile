@@ -24,9 +24,10 @@ RUN apt-get install -y tar \
                        wget
 
 # Install server and database software
-RUN apt-get install -y gunicorn \
-                       sqlite \
-                       nginx
+RUN apt-get install -y gunicorn
+RUN apt-get install -y sqlite
+RUN apt-get update
+RUN apt-get install -y nginx
 
 # Install python etc.
 RUN apt-get install -y python \
