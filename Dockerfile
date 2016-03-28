@@ -48,6 +48,8 @@ RUN rm /etc/nginx/sites-enabled/default
 # Port to expose
 EXPOSE 80
 
+RUN python /app/manage.py collectstatic --noinput
+
 # Directory to execute CMD commands
 WORKDIR /app
 
