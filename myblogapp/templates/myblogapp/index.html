@@ -2,34 +2,52 @@
 {% block head_title %}Blog Home{% endblock %}
 
 {% block page_content %}
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<h1 class="page-title">Blog Posts</h1>
-			<hr />
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="page-title">Blog Posts</h1>
+                <hr/>
+            </div>
+        </div>
 
-	<div class="row">
-		<div class="col-md-8">
-			{% for post in latest_post_list %}
-			<!-- Title -->
-			<h2 class="post-title"><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a></h2>
-			<!-- Date/Time -->
-			<h4><span·class="glyphicon·glyphicon-time"></span> Date: {{ post.pub_date|date:"Y-m-d" }} {% if post.mod_date %}| Modified: {{ post.mod_date|date:"Y-m-d" }}{% endif %} | Tags: {% for tag in post.tags.all %}{% if not forloop.first %}, {% endif %}<a href="{% url 'blog:tag_detail' tag.slug %}">{{tag}}</a>{% endfor %}</h4>
-			<hr />
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in latest_post_list %}
+                    <!-- Title -->
+                    <h2 class="post-title"><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a></h2>
+                    <!-- Date/Time -->
+                    <h4><span·class="glyphicon·glyphicon-time"></span> Date: {{ post.pub_date|date:"Y-m-d" }}
+                        {% if post.mod_date %}| Modified: {{ post.mod_date|date:"Y-m-d" }}{% endif %} | Tags:
+                        {% for tag in post.tags.all %}{% if not forloop.first %}, {% endif %}
+                            <a href="{% url 'blog:tag_detail' tag.slug %}">{{ tag }}</a>{% endfor %}</h4>
+                    <hr/>
 
-			{{ post.body|safe }}
+                    {{ post.body|safe }}
 
-			<hr />
-			{% endfor %}
-		</div>
+                    <hr/>
+                {% endfor %}
 
-		<!-- Blog Sidebar Widgets Column -->
-		{% include "side_bar_widgets.html" %}
-	</div>
-	<!-- /.row -->
+                {% if more_posts %}
+                    <!-- next page! -->
+                    <nav>
+                        <ul class="pager">
+                            {% if previous_page_exists %}
+                                <li><a href="{% url 'blog:index_page' previous_page %}">Previous</a></li>
+                            {% endif %}
 
-</div>
+                            {% if next_page_exists %}
+                                <li><a href="{% url 'blog:index_page' next_page %}">Next</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            {% include "side_bar_widgets.html" %}
+        </div>
+        <!-- /.row -->
+
+    </div>
 
 {% endblock %}

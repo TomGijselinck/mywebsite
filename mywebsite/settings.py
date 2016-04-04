@@ -18,13 +18,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOCAL_DIR = os.path.join(BASE_DIR, 'local')
 
-
 # When deploying, check this list:
 # https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 with open(os.path.join(LOCAL_DIR, 'secret_key')) as f:
-	SECRET_KEY = f.read().strip()
-
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEV
@@ -61,9 +59,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-					os.path.join(BASE_DIR, 'myblogapp/templates/myblogapp/'),
-					os.path.join(BASE_DIR, 'templates'),
-				],
+            os.path.join(BASE_DIR, 'myblogapp/templates/myblogapp/'),
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -88,7 +85,6 @@ DATABASES = {
         'NAME': os.path.join(LOCAL_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -102,7 +98,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/

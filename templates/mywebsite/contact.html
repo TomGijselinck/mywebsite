@@ -3,34 +3,41 @@
 {% load staticfiles %}
 
 {% block page_content %}
-<div class="container">
-	<div class="row">
-		<div class="col-md-8">
-			<h1 class="page-title">Get in contact!</h1>
-			<hr>
-			<p>Have a specific question or request or just want to say hi? Get in touch using one of the following mediums:</p>
-				<ul>
-					<li>Send me an email to <a href="mailto:tom@tomgijselinck.com">tom@tomgijselinck.com</a>.
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-title">Get in contact!</h1>
+                <hr>
+                <p>Have a specific question or request or just want to say hi? Get in touch using one of the following
+                    mediums:</p>
+                <ul>
+                    <li>Send me an email to <a href="mailto:tom@tomgijselinck.com">tom@tomgijselinck.com</a>.
                         You can use my PGP <a href="{% static 'pub.txt' %}">public key</a>
-                        (<i>fingerprint: A09B D1F4 84D5 3D37 E1B0 6CE1 CE98 6B06 9CEE DE90</i>).</li>
+                        (<i>fingerprint: A09B D1F4 84D5 3D37 E1B0 6CE1 CE98 6B06 9CEE DE90</i>).
+                    </li>
                     <li>View my <a href="https://be.linkedin.com/in/tomgijselinck">LinkedIn profile</a></li>
-					<li>Find and follow me on
-						<a href="//plus.google.com/u/0/100023664418907749680?prsrc=3"
-					   rel="publisher" target="_top" style="text-decoration:none;">
-						 <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:20px;height:20px;"/>
-					 </a>
-					</li>
-					<li>Browse my source code on <a href="https://github.com/TomGijselinck">GitHub</a>.</li>
-					<li>See my KU Leuven personal <a href="http://www.student.kuleuven.be/~r0309380/">home page</a> (old).</li>
-            </ul>
-            <h3>Sign my PGP key</h3>
-            <p>If you want to sign my key (and I can sign yours), you can verify my identity by using skype. Send me an email and we'll arrange something.</p>
-		</div>
-		<div class="col-sm-5">
-			<!-- Place this tag where you want the widget to render. -->
-			<div class="g-person" data-width="270" data-href="//plus.google.com/u/0/100023664418907749680" data-rel="author"></div>
+                    <li>Find and follow me on
+                        <a href="//plus.google.com/u/0/100023664418907749680?prsrc=3"
+                           rel="publisher" target="_top" style="text-decoration:none;">
+                            <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+"
+                                 style="border:0;width:20px;height:20px;"/>
+                        </a>
+                    </li>
+                    <li>Browse my source code on <a href="https://github.com/TomGijselinck">GitHub</a>.</li>
+                    <li>See my KU Leuven personal <a href="http://www.student.kuleuven.be/~r0309380/">home page</a>
+                        (old).
+                    </li>
+                </ul>
+                <h3>Sign my PGP key</h3>
+                <p>If you want to sign my key (and I can sign yours), you can verify my identity by using skype. Send me
+                    en email and we'll arrange something.</p>
+            </div>
+            <div class="col-sm-5">
+                <!-- Place this tag where you want the widget to render. -->
+                <div class="g-person" data-width="270" data-href="//plus.google.com/u/0/100023664418907749680"
+                     data-rel="author"></div>
 
-		</div>
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

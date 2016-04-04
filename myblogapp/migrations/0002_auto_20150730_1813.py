@@ -5,15 +5,14 @@ from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('myblogapp', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='post',
-            name='timestamp',
-            field=models.DateTimeField(verbose_name=b'date published'),
+                model_name='post',
+                name='timestamp',
+                field=models.DateTimeField(verbose_name=b'date published'),
         ),
     ]
