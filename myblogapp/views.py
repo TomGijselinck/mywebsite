@@ -8,14 +8,29 @@ from .models import Tag
 class IndexView(generic.ListView):
     template_name = 'myblogapp/index.html'
     context_object_name = 'latest_post_list'
+    current_page = 0
+    POSTS_PER_PAGE = 3
 
-    def get_queryset(self):
+    def get_queryset(self, **kwargs):
         "Return the last five posts."
-        return Post.objects.order_by('-pub_date')[:5]
+        self.current_page = self.kwargs.get('page')
+        if self.current_page is not None:
+            self.current_page = int(self.current_page)
+        else:
+            self.current_page = 0
+        return Post.objects.order_by('-pub_date')[
+               self.current_page * self.POSTS_PER_PAGE: (self.current_page + 1) * self.POSTS_PER_PAGE]
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['tags'] = Tag.objects.all()
+        context['more_posts'] = len(Post.objects.all()) > self.POSTS_PER_PAGE
+        context['next_page_exists'] = (self.current_page + 1) * self.POSTS_PER_PAGE < len(Post.objects.all())
+        if context['next_page_exists']:
+            context['next_page'] = self.current_page + 1
+        context['previous_page_exists'] = self.current_page - 1 >= 0
+        if context['previous_page_exists']:
+            context['previous_page'] = self.current_page - 1
         return context
 
 

@@ -26,6 +26,21 @@
 
                     <hr/>
                 {% endfor %}
+
+                {% if more_posts %}
+                    <!-- next page! -->
+                    <nav>
+                        <ul class="pager">
+                            {% if previous_page_exists %}
+                                <li><a href="{% url 'blog:index_page' previous_page %}">Previous</a></li>
+                            {% endif %}
+
+                            {% if next_page_exists %}
+                                <li><a href="{% url 'blog:index_page' next_page %}">Next</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
