@@ -6,6 +6,7 @@ My personal website using django.
 [tomgijselinck.com](http://tomgijselinck.com)
 
 ## Todo
++ add RSS feed functionality
 + blog search functionality
 + customize tags (n.o. articles, size)
 + write main page
