@@ -9,6 +9,7 @@ My personal website using django.
 + add RSS feed functionality
 + blog search functionality
 + customize tags (n.o. articles, size)
++ enable featured post
 + write main page
 + ~~add page with list of all articles~~
 + ~~next article feature~~
