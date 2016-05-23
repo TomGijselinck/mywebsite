@@ -46,7 +46,7 @@ RUN ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
 
 # Port to expose
-EXPOSE 80
+EXPOSE 8001
 
 RUN python /app/manage.py collectstatic --noinput
 
